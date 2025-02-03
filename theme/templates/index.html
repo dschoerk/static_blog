@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Latest Articles</h1>
+    <div class="space-y-6">
+        {% for article in articles %}
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <h2 class="text-2xl font-semibold mb-2">
+                <a href="{{ SITEURL }}/{{ article.url }}" class="text-blue-600 hover:text-blue-800">
+                    {{ article.title }}
+                </a>
+            </h2>
+            <p class="text-gray-600 mb-4">{{ article.summary }}</p>
+            <div class="flex items-center text-sm text-gray-500">
+                <span class="mr-4">{{ article.date|strftime('%b %d, %Y') }}</span>
+                <span>{{ article.category }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

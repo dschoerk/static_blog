@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ SITENAME }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 w-full">
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside class="fixed top-4 left-4 bg-white shadow-md p-6 rounded-lg z-50">
+
+
+      <div class="bg-white rounded-lg shadow-lg p-6 max-w-xl w-full">
+        <!-- Profile Photo -->
+        <div class="flex justify-center">
+            <img src="{{SITE_URL}}/theme/images/profile.png" alt="Developer Photo" class="rounded-full w-48 border-4 border-gray-200">
+        </div>
+
+        <!-- Name -->
+        <h2 class="text-center text-xl font-bold mt-4 mb-2">Dominik Schörkhuber</h2>
+
+        <!-- Social Icons -->
+        <div class="flex justify-around my-4">
+            <a href="https://github.com/dschoerk" class="text-gray-600 hover:text-blue-600">
+                <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-blue-600">
+                <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-blue-600">
+                <i class="fab fa-instagram fa-lg"></i>
+            </a>
+        </div>
+
+        <!-- Email Section -->
+        <div class="border-t pt-4 mt-4">
+            <p class="text-center text-sm text-gray-600">
+                <i class="fas fa-envelope mr-2"></i>
+                dominik@schoerkhuber.at
+            </p>
+        </div>
+      </div>
+
+      <h2 class="text-xl font-bold mb-4">Sidebar</h2>
+      <ul class="space-y-2">
+        <li><a href="{{ SITEURL }}" class="text-blue-600 hover:text-blue-800">Home</a></li>
+        <li><a href="{{ SITEURL }}/archives.html" class="text-blue-600 hover:text-blue-800">Archives</a></li>
+        <li><a href="{{ SITEURL }}/categories.html" class="text-blue-600 hover:text-blue-800">Categories</a></li>
+        <li><a href="{{ SITEURL }}/tags.html" class="text-blue-600 hover:text-blue-800">Tags</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8">
+      {% block content %}
+      {% endblock %}
+    </main>
+  </div>
+</body>
+
+</html>
